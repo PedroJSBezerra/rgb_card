@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.app {
+  background: #222;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.card {
+  display: flex;
+  width: 200px;
+  height: 280px;
+  border-radius: 10px;
+  flex-direction: column;
+  transition: all .3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card .bg {
+  background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80');
+  background-size: 100%;
+  background-position: center;
+  width: 100%;
+  height: 40%;
+  transition: all .4s ease;
+  border-radius: 1rem 1rem 0 0;
+}
+.card:hover .bg{
+  border-radius: 1rem 1rem 0 0;
+  background-size: 130%;
+}
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 600;
+  background: #333;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  color: #d693e7;
+}
+.info > *{
+  padding: .5rem;
+}
+.price{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  color: #e9f4a0;
+  background: #333;
+  border-radius: 0 1rem;
+}
+.sizes{
+  display: flex;
+  justify-content: space-evenly;
+}
+.sizes > *{
+  background: darkcyan;
+  color: #eee;
+  padding: 4px;
+  border-radius: 4px;
+}
+.sizes [disabled]{
+  background: #999;
+  text-decoration: line-through 2px black;
+}
+.buy{
+  background: #8258a9;
+  color: white;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-align: center;
+}
+
+
+
+
+.rgb::before {
+  content: '';
+  display: block;
+  border-radius: 16px;
+  filter: blur(8px);
+  transform: translateZ(-1px);
+  background: linear-gradient(
+    45deg, 
+    #ff3333,
+    #ff8f33,
+    #ffeb33,
+    #b8ff33,
+    #33ff81,
+    #33ffee,
+    #339cff,
+    #5233ff,
+    #cf33ff,
+    #ff33d3,
+    #ff3333
+  ) repeat 0% 0% / 100% 300%;
+  position: absolute;
+  inset: -3px;
+  animation: rgb 2s linear infinite;
+  z-index: -1;
+}
+@keyframes rgb{
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 0%;}
+}
